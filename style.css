@@ -1,0 +1,27 @@
+.gi-2x{font-size: 2em;}
+.gi-3x{font-size: 3em;}
+.gi-4x{font-size: 4em;}
+.gi-5x{font-size: 5em;}
+.cell {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  background: gray;
+}
+.figure {
+  padding-left: 5px;
+  text-align: center;
+  font-size: 2em;
+}
+.board .brow:nth-child(odd) .cell:nth-child(even) {
+  background: seagreen;
+}
+table .brow:nth-child(even) .cell:nth-child(odd) {
+  background: seagreen;
+}
+.white {
+  color: white;
+}
+.black{
+  color: black;
+}

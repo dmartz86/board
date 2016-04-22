@@ -1,0 +1,40 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/superhero/bootstrap.css"></link>
+<link rel="stylesheet" href="style.css"></link>
+<title>Chess Keyboard</title>
+<div class="container text-center" ng-app="boardApp" ng-controller="BoardController">
+  <h1 class="text-center">Chess Keyboard</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="board">
+        <tr ng-repeat="pieces in board track by $index" class="brow">
+          <td ng-repeat="piece in pieces track by $index" class="cell">
+            <i class="figure glyphicon glyphicon-{{piece.figure}}" ng-class="piece.class"></i> 
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <div class="list-group">
+          <a href="#" class="list-group-item active">Moves</a>
+          <a href="#" class="list-group-item" ng-repeat="move in moves track by $index">
+            <span ng-bind="$index+1"></span>
+            <span>.</span>
+            <span ng-bind="move.white"></span>
+            <span>-</span>
+            <span ng-bind="move.black"></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <span ng-repeat="l in kbletters track by $index" ng-bind="l" class="btn btn-default col-md-1"></span>
+      </div>  
+      <div class="col-md-12">
+        <span ng-repeat="n in kbnumbers track by $index" ng-bind="n" class="btn btn-default col-md-1"></span>
+      </div>  
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="app.js"></script>
